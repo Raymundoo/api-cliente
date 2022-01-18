@@ -1,0 +1,37 @@
+<html> 
+<head> 
+    <title>Contactanos</title> 
+</head> 
+ 
+<body> 
+    <h1>Contactanos</h1> 
+ 
+ {% if form.errors %} 
+    <p style="color: red;"> 
+    Por favor corrige lo siguiente: 
+    </p> 
+{% endif %} 
+ 
+    <form action="" method="post">{% csrf_token %} 
+        <div class="field"> 
+            {{ form.asunto.errors }} 
+                <label for="id_asunto">Asunto:</label> 
+            {{ form.asunto }} 
+        </div> 
+ 
+        <div class="field"> 
+            {{ form.email.errors }} 
+               <label for="id_email">E-mail:</label> 
+           {{ form.email }} 
+        </div> 
+ 
+        <div class="field"> 
+            {{ form.mensaje.errors }} 
+                <label for="id_mensaje">Mensaje:</label> 
+            {{ form.mensaje }} 
+        </div> 
+ 
+        <input type="submit" value="Enviar"> 
+    </form> 
+</body> 
+</html>

@@ -1,0 +1,132 @@
+[
+{
+  "model": "biblioteca.libro",
+  "pk": 10,
+  "fields": {
+    "titulo": "Jorge Luis Borges",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 11,
+  "fields": {
+    "titulo": "Antonio Machado",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 12,
+  "fields": {
+    "titulo": "Edgar Allan Poe",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 13,
+  "fields": {
+    "titulo": "Miguel de Cervantes",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 14,
+  "fields": {
+    "titulo": "Gabriel Garc\u00eda M\u00e1rquez",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 15,
+  "fields": {
+    "titulo": "Ruben Dario",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 16,
+  "fields": {
+    "titulo": "Rafael Alberti",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 17,
+  "fields": {
+    "titulo": "William Shakespeare",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 18,
+  "fields": {
+    "titulo": "Franz Kafka",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "biblioteca.libro",
+  "pk": 19,
+  "fields": {
+    "titulo": "Pablo Neruda",
+    "editor": 2,
+    "fecha_publicacion": "1998-04-12",
+    "portada": "",
+    "autores": [
+      2
+    ]
+  }
+}
+]

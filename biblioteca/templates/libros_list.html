@@ -1,0 +1,48 @@
+{% include 'base/base.html'%}
+{%block title%} {%endblock%}
+<center><h1>Lista de Libros</h1></center>
+{% include 'formulario_buscar.html'%}
+{%block content%}
+<div class="m-5">
+    <table class="table">
+        <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Editor</th>
+        <th scope="col">Feche de publicacion</th>
+        <th scope="col">Accion</th>
+        </thead>
+        <tbody>
+            {%if object_list%}
+            {%for libro in object_list%}
+            <tr>
+            <th scope="row">{{libro.id}} </th>
+            <td>{{libro.titulo}} </td>
+            <td>{{libro.editor.nombre}} </td>
+            <td>{{libro.fecha_publicacion}}</td>
+            <td>
+                <a type="button" href="{%url 'libro_editar' libro.id %} " class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
+                <a type="button" href="{%url 'libro_eliminar' libro.id %}" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+            </td>
+            {%endfor%}
+            {%elif libro%}
+            {%for libros in libro%}
+            <th scope="row">{{libros.id}} </th>
+            <td>{{libros.titulo}} </td>
+            <td>{{libros.editor.nombre}} </td>
+            <td>{{libros.fecha_publicacion}}</td>
+            <td>
+                <a type="button" href="{%url 'libro_funct_editar' libros.id %}" class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
+                <a type="button" href="{%url 'libro_funct_eliminar' libros.id %}" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+            </td>
+        </tr>
+            {%endfor%}
+            {%else%}
+            <h1>No hay registros de Libros</h1>
+            {%endif%}
+        </tbody>
+
+
+    </table>
+</div>
+{%endblock%}

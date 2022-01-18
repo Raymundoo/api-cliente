@@ -1,0 +1,33 @@
+{% include 'base/base.html'%}
+<title>Resultados</title>
+{%block content%}
+<p>Estas buscado: <strong>{{ query }}</strong></p> 
+{% if libros %} 
+    <p>Libros encontrados: {{ libros|length }} libro{{ libros|pluralize }}.</p> 
+    <table class="table">
+        <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Editor</th>
+        <th scope="col">Feche de publicacion</th>
+        <th scope="col">Accion</th>
+        </thead> 
+        {% for libros in libros %} 
+        <tbody>
+           
+            <th scope="row">{{libros.id}} </th>
+            <td>{{libros.titulo}} </td>
+            <td>{{libros.editor.nombre}} </td>
+            <td>{{libros.fecha_publicacion}}</td>
+            <td>
+                <a type="button" href="" class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
+                <a type="button" href="" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+            </td>
+            {%endfor%}
+        </tbody>
+    </table>
+{% else %} 
+    <p>Ningún libro coincide con el criterio de búsqueda.</p>
+
+{% endif %} 
+{%endblock%}

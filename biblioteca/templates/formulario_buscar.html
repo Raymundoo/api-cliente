@@ -1,0 +1,14 @@
+    <div class="m-4">
+        {% if errors %} 
+        <ul> 
+            {% for error in errors %} 
+            <li style="color: red;">{{ error }}</li> 
+            {% endfor %} 
+        </ul> 
+        {% endif %} 
+        <form action="/buscar/" method="get"> 
+        <input type="text" name="q"> 
+        <input class="btn btn-primary" type="submit" value="Buscar">
+        </form> 
+    </div>
+   
