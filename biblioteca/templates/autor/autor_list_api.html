@@ -1,0 +1,33 @@
+{% include 'base/base.html'%}
+
+<center><h1>Lista de Autores API</h1></center>
+{%block content%}
+<div class="m-5">
+<table class="table">
+    <thead>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Accion</th>
+       
+    </thead>
+    <tbody>
+        {%if object_list%}
+            {%for autor in object_list%}
+                <tr>
+                    <th scope="row">{{autor.id}} </th>
+                    <td>{{autor.nombre}} {{autor.apellidos}}</td>
+                    <td>{{autor.email}} </td>
+                    <td>
+                        <a type="button" href="{%url 'autor_edit_api' autor.id %}  " class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
+                        <a type="button" href="{%url 'autor_delete_api' autor.id %}  " class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                    </td>
+                </tr>   
+            {% endfor %} 
+        {% else %}
+            <h1>No hay registros de Autor</h1>
+        {% endif %}
+    </tbody>
+</table>
+</div>
+{%endblock%}

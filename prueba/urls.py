@@ -1,10 +1,11 @@
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from biblioteca import views
 from contactos.views  import contactos
 from pokemon.views  import get_pokemon,info_pokemon,tipo_pokemon
+
 """
 
 aumento 
@@ -36,4 +37,6 @@ urlpatterns = [
     url(r'^pokemon/$', get_pokemon,name='index_pokemon'),
     url(r'^pokemon/detalle/(?P<id_pokemon>\d+)/$',info_pokemon,name='detalle_pokemon'),
     url(r'^pokemon/tipo/(?P<id_tipo>\d+)/$',tipo_pokemon,name='tipo_pokemon'),
+
+    url(r'^', include('biblioteca.urls')),
 ]

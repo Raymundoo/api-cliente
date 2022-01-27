@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'biblioteca',
     'contactos',
-    'pokemon'
+    'pokemon',
+    'rest_framework'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,9 +126,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'))
+#STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'))
+STATIC_ROOT = 'static/'
 MEDIA_ROOT = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media").replace('\\','/')
+
+MEDIA_URL = '/media/'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025

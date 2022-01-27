@@ -13,31 +13,32 @@
     </thead>
     <tbody>
         {%if object_list%}
-        {%for autor in object_list%}
-        <tr>
-            <th scope="row">{{autor.id}} </th>
-            <td>{{autor.nombre}} {{autor.apellidos}}</td>
-            <td>{{autor.email}} </td>
-            <td>
-                <a type="button" href="{%url 'autor_editar' autor.id %}  " class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
-                <a type="button" href="{%url 'autor_eliminar' autor.id %}  " class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
-            </td>
-        
-        {%endfor%}
-        {%elif autor%}
-        {%for autors in autor%}
-        <th scope="row">{{autors.id}} </th>
-            <td>{{autors.nombre}} {{autors.apellidos}}</td>
-            <td>{{autors.email}} </td>
-            <td>
-                <a type="button" href="{%url 'autor_funct_editar' autors.id %}  " class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
-                <a type="button" href="{%url 'autor_funct_eliminar' autors.id %}" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
-            </td>
-        </tr>   
-        {%endfor%} 
-        {%else%}
+            {%for autor in object_list%}
+            <tr>
+                <th scope="row">{{autor.id}} </th>
+                <td>{{autor.nombre}} {{autor.apellidos}}</td>
+                <td>{{autor.email}} </td>
+                <td>
+                    <a type="button" href="{%url 'autor_editar' autor.id %}  " class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
+                    <a type="button" href="{%url 'autor_eliminar' autor.id %}  " class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                </td>
+            
+            {% endfor %}
+
+        {% elif autor %}
+            {% for autors in autor %}
+                <th scope="row">{{autors.id}} </th>
+                <td>{{autors.nombre}} {{autors.apellidos}}</td>
+                <td>{{autors.email}} </td>
+                <td>
+                    <a type="button" href="{%url 'autor_funct_editar' autors.id %}  " class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
+                    <a type="button" href="{%url 'autor_funct_eliminar' autors.id %}" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                </td>
+            </tr>   
+            {% endfor %} 
+        {% else %}
             <h1>No hay registros de Autor</h1>
-            {%endif%}
+        {% endif %}
     </tbody>
 </table>
 </div>
