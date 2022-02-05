@@ -12,7 +12,8 @@ aumento
 xd
 """
 urlpatterns = [
-    
+    url(r'^admin/', admin.site.urls),
+
     url(r'^formulario-buscar/$', views.formulario_buscar),
     url(r'^buscar/$', views.buscar),
     url(r'^$', views.LibrosList.as_view(),name='libro_lista'),
@@ -39,4 +40,5 @@ urlpatterns = [
     url(r'^pokemon/tipo/(?P<id_tipo>\d+)/$',tipo_pokemon,name='tipo_pokemon'),
 
     url(r'^', include('biblioteca.urls')),
+    url(r'^', include('api.urls')),
 ]

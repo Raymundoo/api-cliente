@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*a=13$h6rgef#0*zyp6#7l+p816u^3%f0ljm@*09ch!3np$_w*'
+SECRET_KEY = "*a=13$h6rgef#0*zyp6#7l+p816u^3%f0ljm@*09ch!3np$_w*"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
 
 
 # Application definition
@@ -39,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'biblioteca',
     'contactos',
+    'api',
     'pokemon',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,3 +139,8 @@ MEDIA_URL = '/media/'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
+
+
+# API
+API_USER = env.str('API_USER')
+API_PASSWORD = env.str('API_PASSWORD')

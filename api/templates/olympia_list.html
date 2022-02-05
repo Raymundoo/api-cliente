@@ -1,0 +1,39 @@
+{% include 'base/base.html' %}
+{% block title%} {%endblock %}
+<center><h1>Mr Olympias API</h1></center>
+{% block content %}
+<div class="m-5">
+    <table class="table">
+        <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Biografia</th>
+        <th scope="col">Peso</th>
+        <th scope="col">Altura</th>
+        <th scope="col">Frases</th>
+        <th scope="col">Fecha de Publicación</th>
+        <th scope="col">Ultima actualización</th>
+        </thead>
+        <tbody>
+            {{status_code}}
+            {% if object_list %}
+                {% for olympia in object_list %}
+                    <tr>
+                        <th scope="row">{{ olympia.full_name }} </th>
+                        <td>{{ olympia.biography }} </td>
+                        <td>{{ olympia.weight }} </td>
+                        <td>{{ olympia.height }} </td>
+                        <td>{{ olympia.age }} </td>
+                        <td>{{ olympia.phrases }} </td>
+                        <td>{{ olympia.date_published }} </td>
+                        <td>{{ olympia.date_updated }}</td>
+
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <h1>No hay registros de Mr Olympia</h1>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -284,3 +284,5 @@ def libro_delete_api(request, id_libro):
         else:
             return redirect('libro_lista_api')
     return render(request, 'libros_delete.html', {'libro': libro})
+
+

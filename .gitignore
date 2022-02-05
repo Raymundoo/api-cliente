@@ -4,21 +4,10 @@
 *.pyc
 __pycache__/
 
-#settings.py
-settings_server.py
-#manage.py
+
 #Carpeta de pycharm
 .idea/
 .vscode/
-lote*.py
 
-### Ansible ###
-.conf/ansible/hosts
-.conf/ansible/ansible.cfg
-.conf/ansible/ayuda.md
-
-### Script Snapshot DO y AWS
-.conf/snapshots/
-
-# Logs
-.logs/
+### Environ ###
+prueba/.env

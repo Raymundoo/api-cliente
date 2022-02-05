@@ -23,4 +23,10 @@ urlpatterns = [
     url(r'^api/libros/agregar/$', libro_add_api, name='libro_add_api'),
     url(r'^api/libros/editar/(?P<id_libro>[0-9]+)/$', libro_edit_api, name='libro_edit_api'),
     url(r'^api/libros/eliminar/(?P<id_libro>[0-9]+)/$', libro_delete_api, name='libro_delete_api'),
+
+
+    # My Olympia
+    #url(r'^api/olympias/lista/$', mr_olympia_lista_api, name='mr_olympia_lista_api'),
+    #url(r'^api/olympias/agregar/$', mr_olympia_add_api, name='mr_olympia_add_api'),
+    
 ]
