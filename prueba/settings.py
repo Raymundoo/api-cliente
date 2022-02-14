@@ -141,6 +141,9 @@ EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 
 
-# API
+# API JWT
 API_USER = env.str('API_USER')
 API_PASSWORD = env.str('API_PASSWORD')
+
+# APITokenAuthentication
+TOKEN_AUTHENTICATION = env.str('TOKEN_AUTHENTICATION')

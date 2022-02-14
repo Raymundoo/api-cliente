@@ -1,0 +1,39 @@
+{% include 'base/base.html' %}
+{% block title%} {%endblock %}
+<center><h1>{{ titulo }}</h1></center>
+{% block content %}
+<div class="m-5">
+    <table class="table">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Fecha Rescate</th>
+            <th scope="col">Persona</th>
+            <th scope="col">Vacuna</th>
+        </thead>
+        <tbody>
+            {% if object_list %}
+                {% for mascota in object_list %}
+                    <tr>
+                        <th scope="row">{{ mascota.id }}</th>
+                        <td>{{ mascota.nombre }} </td>
+                        <td>{{ mascota.sexo }}</td>
+                        <td>{{ mascota.edad }}</td>
+                        <td>{{ mascota.fecha_rescate }}</td>
+                        <td>{{ mascota.persona.nombre }} {{ mascota.persona.apellidos }}</td>
+                        <td>{% for vacuna in mascota.vacunas %} {{ vacuna.nombre }}, {% endfor %}</td>
+                        <td>
+                            <a type="button" href="#" class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/></a>
+                            <a type="button" href="#" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <h1>No hay registros de Mascotas</h1>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
